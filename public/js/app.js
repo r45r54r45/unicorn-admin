@@ -30,4 +30,12 @@ angular.module('app', [])
             });
         }
 
-    });
+    })
+    .controller('noticeReadCtrl',function($http, $scope){
+        $http.get('https://yicstuco.appspot.com/admin/notice').success(function(data){
+            $scope.list=data;
+        });
+        $scope.delete=function(id){
+            alert('삭제는 아직..');
+        };
+    })

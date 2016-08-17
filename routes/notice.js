@@ -5,5 +5,9 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
     res.render('notice');
 });
+router.get('/read', function(req, res, next) {
+    res.render('read_notice');
+});
+
 
 module.exports = router;
