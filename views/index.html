@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 
 <head>
 
@@ -17,17 +17,20 @@
   <!-- Custom CSS -->
   <link href="css/simple-sidebar.css" rel="stylesheet">
 
+  <!--script-->
+  <script src="angular/angular.js"></script>
+  <script src="js/app.js"></script>
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
-  <script src="angular/angular.js"></script>
+
   <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
   <![endif]-->
 
 </head>
 
-<body>
+<body ng-controller="mainCtrl">
 
 <div id="wrapper">
 
@@ -51,10 +54,10 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-lg-12">
-          <h1>Simple Sidebar</h1>
-          <p>This template has a responsive menu toggling system. The menu will appear collapsed on smaller screens, and will appear non-collapsed on larger screens. When toggled using the button below, the menu will appear/disappear. On small screens, the page content will be pushed off canvas.</p>
-          <p>Make sure to keep all page content within the <code>#page-content-wrapper</code>.</p>
-          <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
+          <div class="well">
+            <p class="h3">UIC 앱 UNI.CON 의 어드민 페이지 입니다.</p>
+            <p class="h5">문제 있을 시 010-7109-7327 로 연락주시기 바랍니다.</p>
+          </div>
         </div>
       </div>
     </div>
