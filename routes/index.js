@@ -3,17 +3,15 @@ var router = express.Router();
 var path= require("path");
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  // res.sendFile('/index.html');
-  res.render('index');
-});
-router.get('/update',function(req,res, next){
-  // or more concisely
-  var sys = require('sys')
-  var exec = require('child_process').exec;
-  function puts(error, stdout, stderr) { sys.puts(stdout) }
-  exec("git pull origin master", puts);
-
-  
+  if(req.query.update){
+    var sys = require('sys')
+    var exec = require('child_process').exec;
+    function puts(error, stdout, stderr) { sys.puts(stdout) }
+    exec("git pull origin master", puts);
+    res.render('index');
+  }else{
+    res.render('index');
+  }
 });
 
 module.exports = router;
