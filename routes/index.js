@@ -13,7 +13,6 @@ router.get('/update',function(req,res, next){
   function puts(error, stdout, stderr) { sys.puts(stdout) }
   exec("git pull origin master", puts);
 
-
   
 });
 
