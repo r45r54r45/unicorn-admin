@@ -12,9 +12,7 @@ router.get('/update',function(req,res, next){
   var exec = require('child_process').exec;
   function puts(error, stdout, stderr) { sys.puts(stdout) }
   exec("git pull origin master", puts);
-
-
-  
+  // ddd
 });
 
 module.exports = router;
