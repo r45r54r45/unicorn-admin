@@ -59,14 +59,20 @@
             <div class="well">공지사항 게시</div>
             <div class="row">
                 <div class="col-lg-12">
-                    <form class="form-group">
+
                         <input type="text" class="form-control" placeholder="제목" ng-model="sendData.title">
                         <textarea class="form-control" placeholder="내용" ng-model="sendData.body"></textarea>
-                        <input type="text" class="form-control" placeholder="이미지 url" ng-model="sendData.image">
-                        <input type="text" class="form-control" placeholder="타겟" ng-model="sendData.target" disabled>
+                    <div class="well" style="margin:20px 0px">
+                    <form class="form-group"  method="post" enctype="multipart/form-data" style="display: inline-block;">
+                        <input type="file" name="file">
+                    </form>
+                    <button ng-click="uploadImage()">이미지 업로드</button>
+                        <input type="text" class="form-control" placeholder="이미지 url" ng-model="sendData.image" disabled>
+                    </div>
+                    <input type="text" class="form-control" placeholder="타겟" ng-model="sendData.target" disabled>
                         <button style="padding:10px" ng-repeat="i in target" ng-click="targetSelect(i)">{{i}}</button>
                         <button style="padding:10px" ng-click="targetSelectAll()">전체</button>
-                    </form>
+                        <button style="padding:10px" ng-click="clear()">모두 삭제</button>
                     <button class="btn btn-block" ng-click="upload()">업로드 하기</button>
                     <div class="alert alert-danger" ng-hide="uploadStatus">업로드 중입니다.</div>
                     <div class="alert alert-success" ng-show="uploadStatus&&resultAlert" ng-bind="resultAlert"></div>

@@ -5,7 +5,7 @@ angular.module('app', [])
 
     })
     .controller('noticeCtrl',function($scope,$http){
-        $scope.target=['tad','hass'];
+        $scope.target=['TAD','HASS',"UD","ASD","ISSD","ISED","Undecided HASS","Undecided UD"];
         $scope.sendData={};
         $scope.targetArray=[];
         $scope.targetSelect=function(target){
@@ -18,6 +18,26 @@ angular.module('app', [])
         }
         $scope.targetSelectAll=function(){
             $scope.sendData.target=$scope.target.toString();
+        }
+        $scope.clear=function(){
+            $scope.sendData.target="";
+        }
+        $scope.uploadImage=function(){
+            var form = $('form')[0];
+            var formData = new FormData(form);
+            $.ajax({
+                url: '/notice/image',
+                processData: false,
+                contentType: false,
+                data: formData,
+                type: 'POST',
+                success: function(result){
+                    $scope.$apply(function(){
+                        $scope.sendData.image=result.image;
+                    });
+                    alert('업로드 완료');
+                }
+            });
         }
         $scope.uploadStatus=true;
         $scope.upload=function(){
