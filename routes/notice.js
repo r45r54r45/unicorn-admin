@@ -18,18 +18,22 @@ router.get('/read', function (req, res, next) {
 router.post('/image', multer.single('file'), function (req, res, next) {
     console.log(req.file);
     if (req.file) {
-        console.log(req.file);
-        var blob = bucket.file("notice_"+new Date().getTime() + "." + req.file.mimetype.split("/")[1]);
-        var blobStream = blob.createWriteStream();
-        blobStream.on('error', function (err) {
-            return next(err);
-        });
-        blobStream.on('finish', function () {
-            var publicUrl = 'https://storage.googleapis.com/'+ bucket.name+'/'+ blob.name;
-            console.log({result: true, image: publicUrl});
-            res.json({result: true, image: publicUrl});
-        });
-        blobStream.end(req.file.buffer);
+        try {
+            console.log(req.file);
+            var blob = bucket.file("notice_" + new Date().getTime() + "." + req.file.mimetype.split("/")[1]);
+            var blobStream = blob.createWriteStream();
+            blobStream.on('error', function (err) {
+                return next(err);
+            });
+            blobStream.on('finish', function () {
+                var publicUrl = 'https://storage.googleapis.com/' + bucket.name + '/' + blob.name;
+                console.log({result: true, image: publicUrl});
+                res.json({result: true, image: publicUrl});
+            });
+            blobStream.end(req.file.buffer);
+        }catch(err){
+            console.log(err);
+        }
     } else {
         res.json({result: false});
     }
