@@ -36,6 +36,9 @@ angular.module('app', [])
                         $scope.sendData.image=result.image;
                     });
                     alert('업로드 완료');
+                },
+                error: function(err){
+                    console.log(err);
                 }
             });
         }
