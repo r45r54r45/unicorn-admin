@@ -23,6 +23,7 @@ router.post('/image', multer.single('file'), function (req, res, next) {
             var blob = bucket.file("notice_" + new Date().getTime() + "." + req.file.mimetype.split("/")[1]);
             var blobStream = blob.createWriteStream();
             blobStream.on('error', function (err) {
+                console.log(err);
                 return next(err);
             });
             blobStream.on('finish', function () {

@@ -36,8 +36,8 @@
       <file leaf-file-name="notice.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/notice.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+            <state relative-caret-position="375">
+              <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -384,7 +384,7 @@
       <workItem from="1471509503181" duration="1416000" />
       <workItem from="1472134247752" duration="561000" />
       <workItem from="1472134867538" duration="968000" />
-      <workItem from="1472136915702" duration="1194000" />
+      <workItem from="1472136915702" duration="1318000" />
     </task>
     <task id="LOCAL-00001" summary="ㅇㅇㅇ">
       <created>1471447972595</created>
@@ -432,7 +432,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="11381000" />
+    <option name="totallyTimeSpent" value="11505000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
@@ -875,8 +875,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/notice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="35" column="9" selection-start-line="35" selection-start-column="9" selection-end-line="35" selection-end-column="9" />
+        <state relative-caret-position="375">
+          <caret line="36" column="9" selection-start-line="36" selection-start-column="9" selection-end-line="36" selection-end-column="9" />
           <folding />
         </state>
       </provider>
