@@ -29,7 +29,7 @@
 
 </head>
 
-<body ng-controller="noticeReadCtrl">
+<body ng-controller="userCtrl">
 
 <div id="wrapper">
 
@@ -63,20 +63,20 @@
             <div class="well">공지사항 읽기</div>
             <table class="table">
                 <thead>
-                <td>제목</td>
-                <td>내용</td>
-                <td>타겟</td>
-                <td>시간</td>
+                <td>닉네임</td>
+                <td>학번</td>
+                <td>학과</td>
+                <td>가입일</td>
                 <td>삭제</td>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="row in list">
-                        <td>{{row.title}}</td>
-                        <td ng-bind-html="row.body"></td>
-                        <td>{{row.target}}</td>
-                        <td>{{row.createdAt| date:'yyyy-MM-dd HH:mm:ss'}}</td>
-                        <td><button ng-click="delete(row.id)">삭제</button></td>
-                    </tr>
+                <tr ng-repeat="row in list">
+                    <td>{{row.username}}</td>
+                    <td>{{row.school_num}}</td>
+                    <td>{{row.major}}</td>
+                    <td>{{row.createdAt| date:'yyyy-MM-dd HH:mm:ss'}}</td>
+                    <td><button ng-click="delete(row.id)">삭제</button></td>
+                </tr>
                 </tbody>
             </table>
         </div>

@@ -1,7 +1,11 @@
-angular.module('app', [])
+angular.module('app', ['ngSanitize'])
     .controller('mainCtrl', function($scope) {
-        $scope.test="dd";
-
+        $scope.logined=false;
+        if(prompt("비밀번호는?")=="3333"){
+            $scope.logined=true;
+        }else{
+            alert('ㅂㅂ');
+        }
 
     })
     .controller('noticeCtrl',function($scope,$http){
@@ -44,6 +48,8 @@ angular.module('app', [])
         }
         $scope.uploadStatus=true;
         $scope.upload=function(){
+            var markupStr = $('#summernote').summernote('code');
+            sendData.body=markupStr;
             // https://yicstuco.appspot.com
             $scope.uploadStatus=false;
             $http.post("https://yicstuco.appspot.com/admin/notice",$scope.sendData).success(function(data){
@@ -62,3 +68,8 @@ angular.module('app', [])
             alert('삭제는 아직..');
         };
     })
+.controller('userCtrl',function($http,$scope){
+    $http.get("https://yicstuco.appspot.com/admin/user").success(function(data){
+        $scope.list=data;
+    });
+})
